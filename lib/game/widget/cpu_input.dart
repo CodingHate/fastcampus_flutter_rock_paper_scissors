@@ -11,17 +11,21 @@ class CpuInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: InputCard(
-        child: getCpuInput(),
-      ),
+    return Row(
+      children: [
+        Expanded(child: SizedBox.shrink()),
+        Expanded(
+          child: InputCard(
+            child: getCpuInput(),
+          ),
+        ),
+        Expanded(child: SizedBox.shrink()),
+      ],
     );
   }
 
   Widget getCpuInput() {
-    print("first");
     if (isDone) {
-      print("select");
       return Image.asset(cpuInput.path);
     }
 

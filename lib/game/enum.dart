@@ -8,3 +8,13 @@ enum InputType {
 
   String get path => '$assetPath/$name.png';
 }
+
+enum Result {
+  playerWin('player 승리'),
+  draw('무승부'),
+  cpuWin('player 패배');
+
+  const Result(this.displayString);
+
+  final String displayString;
+}
