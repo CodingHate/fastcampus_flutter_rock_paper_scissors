@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'game/game_body.dart';
-
 void main() {
   runApp(const RSPApp());
 }
