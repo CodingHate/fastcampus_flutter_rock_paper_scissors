@@ -7,6 +7,14 @@ class GameResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    if (isDone) {
+      return const Placeholder();
+    }
+    return Center(
+      child: Text(
+        '가위, 바위, 보 중 하나를 선택 해 주세요.',
+        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      ),
+    );
   }
 }
