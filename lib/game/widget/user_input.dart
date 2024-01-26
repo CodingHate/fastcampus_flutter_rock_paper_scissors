@@ -13,20 +13,27 @@ class UserInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  if (isDone) {
-  return Placeholder();
-  }
+    if (isDone) {
+      return Placeholder();
+    }
 
-  return Row(
-  children: _getInputs(callback),
-  );
+    return Row(
+      children: _getInputs(callback),
+    );
   }
 }
 
 List<Widget> _getInputs(Function(InputType) callback) {
-  return InputType.values.map((type) =>
-      InputCard(
-        child: Image.asset(type.path), callback: () => callback.call(type),),
-  ).toList();
+  return InputType.values
+      .map(
+        (type) => Expanded(
+          child: InkWell(
+            onTap: () => callback.call(type),
+            child: InputCard(
+              child: Image.asset(type.path),
+            ),
+          ),
+        ),
+      )
+      .toList();
 }
-

@@ -16,13 +16,13 @@ class GameBody extends StatefulWidget {
 
 class _GameBodyState extends State<GameBody> {
   late bool _isDone; // game에 해당 되는 결과가 나왔는지 확인 하기 위한 변수
-  late InputType? _userInput;
+  InputType? _userInput;
   late InputType _cpuInput;
   @override
   void initState() {
     super.initState();
     _isDone = false;
-    setCputInput();
+    setCpuInput();
   }
 
   @override
@@ -43,7 +43,7 @@ class _GameBodyState extends State<GameBody> {
     });
   }
 
-  void setCputInput(){
+  void setCpuInput(){
     final random = Random();
     _cpuInput = InputType.values[random.nextInt(3)];
   }
